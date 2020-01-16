@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Master" representedClassName="Master" syncable="YES" codeGenerationType="class">
+        <attribute name="cortex_array" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_four" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_one" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_two" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cotrex_array_three" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Student_1" representedClassName="Student_1" syncable="YES" codeGenerationType="class">
+        <attribute name="cortex_array" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_four" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_one" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_three" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_two" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Student_2" representedClassName="Student_2" syncable="YES" codeGenerationType="class">
+        <attribute name="cortex_array" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_four" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_one" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_three" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_two" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Student_3" representedClassName="Student_3" syncable="YES" codeGenerationType="class">
+        <attribute name="cortex_array" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_four" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_one" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_three" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_two" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Student_4" representedClassName="Student_4" syncable="YES" codeGenerationType="class">
+        <attribute name="cortex_array" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_four" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_one" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_three" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_two" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Student_5" representedClassName="Student_5" syncable="YES" codeGenerationType="class">
+        <attribute name="cortex_array" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_four" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_one" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_three" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_two" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Student_6" representedClassName="Student_6" syncable="YES" codeGenerationType="class">
+        <attribute name="cortex_array" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_four" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_one" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_three" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_two" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Student_7" representedClassName="Student_7" syncable="YES" codeGenerationType="class">
+        <attribute name="cortex_array" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_four" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_one" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_three" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_two" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Student_8" representedClassName="Student_8" syncable="YES" codeGenerationType="class">
+        <attribute name="cortex_array" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_four" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_one" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_three" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cortex_array_two" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Master" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Student_1" positionX="-63" positionY="18" width="128" height="120"/>
+        <element name="Student_2" positionX="-63" positionY="36" width="128" height="120"/>
+        <element name="Student_3" positionX="-54" positionY="54" width="128" height="120"/>
+        <element name="Student_4" positionX="-36" positionY="63" width="128" height="120"/>
+        <element name="Student_5" positionX="-18" positionY="72" width="128" height="120"/>
+        <element name="Student_6" positionX="0" positionY="81" width="128" height="120"/>
+        <element name="Student_7" positionX="18" positionY="90" width="128" height="120"/>
+        <element name="Student_8" positionX="36" positionY="99" width="128" height="120"/>
+    </elements>
+</model>
