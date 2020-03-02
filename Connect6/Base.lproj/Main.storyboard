@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="timeburnerbold.ttf">
+            <string>TimeBurner-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1283,6 +1288,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SaveColumnsView" translatesAutoresizingMaskIntoConstraints="NO" id="dCg-kh-4LH">
+                                <rect key="frame" x="21" y="44" width="373" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhG-LH-aE5">
+                                <rect key="frame" x="206" y="85" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimeBurner-Bold" family="TimeBurner" pointSize="18"/>
+                                <state key="normal" title="Canceal">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWC-gL-82d">
+                                <rect key="frame" x="290" y="85" width="64" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimeBurner-Bold" family="TimeBurner" pointSize="18"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm saving this training record?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFn-DG-TgY">
+                                <rect key="frame" x="43" y="53" width="329" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimeBurner-Bold" family="TimeBurner" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
@@ -1335,6 +1367,10 @@
                         <outlet property="P1_icon" destination="LBr-jf-ki2" id="LXv-g5-oOW"/>
                         <outlet property="P2_current_name" destination="okt-a8-FRY" id="RVg-dF-yak"/>
                         <outlet property="P2_icon" destination="0cp-sh-XtY" id="qwV-gS-SUi"/>
+                        <outlet property="PopUpView" destination="dCg-kh-4LH" id="jv2-qi-qkn"/>
+                        <outlet property="PopUpViewBtn_confirm" destination="qWC-gL-82d" id="URh-pB-CPZ"/>
+                        <outlet property="PopUpViewBtn_decline" destination="XhG-LH-aE5" id="d4H-gK-Kz9"/>
+                        <outlet property="PopUpViewLabel" destination="CFn-DG-TgY" id="jn4-7L-WX8"/>
                         <outlet property="TeachByUser" destination="bm1-NB-axm" id="StX-AM-MlW"/>
                         <outlet property="auto_btn" destination="giG-Mk-2WN" id="rUt-iV-UU1"/>
                         <outlet property="back_btn" destination="YQj-cg-hRp" id="mRw-bD-Rni"/>
@@ -1350,7 +1386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2d-Ry-fWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525" y="-822"/>
+            <point key="canvasLocation" x="1524.6376811594205" y="-822.32142857142856"/>
         </scene>
         <!--Intro Playing View Controller-->
         <scene sceneID="IDa-gr-9rs">
@@ -2542,6 +2578,7 @@
         <image name="LearnbyOwn_off" width="223" height="224"/>
         <image name="LearningByUser_off" width="223" height="224"/>
         <image name="START" width="381" height="165"/>
+        <image name="SaveColumnsView" width="584" height="132"/>
         <image name="User" width="334" height="338"/>
         <image name="auto_off" width="280" height="280"/>
         <image name="b_win_4" width="318" height="540"/>

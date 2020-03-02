@@ -55,6 +55,7 @@
 		AA17C928229CF427005B6CD6 /* Cortex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cortex.swift; sourceTree = "<group>"; };
 		AA17C99F229EA9BB005B6CD6 /* IntroPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPlayingViewController.swift; sourceTree = "<group>"; };
 		AA17C9A1229EA9CE005B6CD6 /* IntroTrainningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroTrainningViewController.swift; sourceTree = "<group>"; };
+		AA19EA41240CE80F00D03516 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
 		AA94DFA4230A36E1009C6B0A /* SpecialPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialPatterns.swift; sourceTree = "<group>"; };
 		AA9D62B822DF5CA200F583A0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		AAA0EEE6229F9B7000FF3C83 /* AnimationPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPlayingViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 				AAB8C97722991CBB0034504E /* LaunchScreen.storyboard */,
 				AAB8C97A22991CBB0034504E /* Info.plist */,
 				AAB8C97222991CB80034504E /* Connect6.xcdatamodeld */,
+				AA19EA41240CE80F00D03516 /* timeburnerbold.ttf */,
 			);
 			path = Connect6;
 			sourceTree = "<group>";

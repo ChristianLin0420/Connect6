@@ -40,6 +40,11 @@ class TrainningViewController: UIViewController {
     @IBOutlet weak var P1_current_name: UILabel!
     @IBOutlet weak var P2_current_name: UILabel!
     
+    @IBOutlet weak var PopUpView: UIImageView!
+    @IBOutlet weak var PopUpViewLabel: UILabel!
+    @IBOutlet weak var PopUpViewBtn_decline: UIButton!
+    @IBOutlet weak var PopUpViewBtn_confirm: UIButton!
+
     // winning coefficient
     private var continue_playing = true
     
@@ -588,73 +593,39 @@ class TrainningViewController: UIViewController {
         print("------------------------------------------------")
     }
     
-    private let PopUpView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        return view
-    }()
-    
-    private let PopUpViewLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Do you want to save the record of this game?"
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 24)
-        label.textColor = .black
-        return label
-    }()
-    
-    private let PopUpViewBtn_confirm: UIButton = {
-        let button = UIButton()
-        button.isEnabled = true
-        button.setImage(UIImage(named: "confirm_off"), for: .normal)
-        return button
-    }()
-    
-    private let PopUpViewBtn_decline: UIButton = {
-        let button = UIButton()
-        button.isEnabled = true
-        button.setImage(UIImage(named: "decline_off"), for: .normal)
-        return button
-    }()
-    
     func restoreMemory(array: [restoreElement]) {
-        let group = DispatchGroup()
-        group.enter()
+//        let group = DispatchGroup()
+//        group.enter()
+//
+//        print("restoreArray = \(array)")
+//
+//        DispatchQueue.main.sync {
+//            if array.count != 0 {
+//                for element in array {
+//                    self.CortexProcess.saveValidPattern(valid_array: element.array, score_operation: element.score_operation, person: element.person)
+//                }
+//            }
+//            group.leave()
+//        }
+//
+//        group.notify(queue: .main) {
+//            print("Finished!!!!")
+//            self.restoreArray.removeAll()
+//            print("restoreArray = \(self.restoreArray)")
+//        }
         
-        print("restoreArray = \(array)")
+        for element in array {
+            CortexProcess.saveValidPattern(valid_array: element.array, score_operation: element.score_operation, person: element.person)
+        }
         
-        DispatchQueue.main.sync {
-            if array.count != 0 {
-                for element in array {
-                    self.CortexProcess.saveValidPattern(valid_array: element.array, score_operation: element.score_operation, person: element.person)
-                }
-            }
-            group.leave()
-        }
-                
-        group.notify(queue: .main) {
-            print("Finished!!!!")
-            self.restoreArray.removeAll()
-            print("restoreArray = \(self.restoreArray)")
-        }
+        restoreArray.removeAll()
     }
     
     func showRestoreMemoryView() {
-        self.view.addSubview(PopUpView)
-        self.view.addSubview(PopUpViewLabel)
-        self.view.addSubview(PopUpViewBtn_confirm)
-        self.view.addSubview(PopUpViewBtn_decline)
-        
-        PopUpView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.8, height: self.view.frame.width * 0.5)
-        PopUpView.center = self.view.center
-        PopUpView.layer.cornerRadius = 25
-        PopUpViewLabel.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.6, height: self.view.frame.height * 0.15)
-        PopUpViewLabel.center = CGPoint(x: self.PopUpView.frame.midX, y: self.PopUpView.frame.minY + 30)
-        PopUpViewBtn_confirm.frame = CGRect(x: 0, y: 0, width: self.PopUpView.frame.width * 0.36, height: self.PopUpView.frame.height * 0.3)
-        PopUpViewBtn_confirm.center = CGPoint(x: (self.PopUpView.frame.midX + self.PopUpView.frame.minX) / 2, y: self.PopUpView.frame.maxY - self.PopUpView.frame.height * 0.18)
-        PopUpViewBtn_decline.frame = CGRect(x: 0, y: 0, width: self.PopUpView.frame.width * 0.36, height: self.PopUpView.frame.height * 0.3)
-        PopUpViewBtn_decline.center = CGPoint(x: (self.PopUpView.frame.midX + self.PopUpView.frame.maxX) / 2, y: self.PopUpView.frame.maxY - self.PopUpView.frame.height * 0.18)
+        PopUpView.alpha = 1.0
+        PopUpViewLabel.alpha = 1.0
+        PopUpViewBtn_confirm.alpha = 1.0
+        PopUpViewBtn_decline.alpha = 1.0
         
         let tap_c = UILongPressGestureRecognizer(target: self, action: #selector(confirm_memory))
         tap_c.minimumPressDuration = 0
@@ -668,9 +639,7 @@ class TrainningViewController: UIViewController {
     }
     
     @objc func confirm_memory(gesture: UITapGestureRecognizer) {
-        if gesture.state == .began {
-            PopUpViewBtn_confirm.setImage(UIImage(named: "confirm_on"), for: .normal)
-        } else if gesture.state == .ended {
+        if gesture.state == .ended {
             print("Confirm memory updating!!")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                 self.resetAll()
@@ -679,9 +648,7 @@ class TrainningViewController: UIViewController {
     }
     
     @objc func decline_memory(gesture: UITapGestureRecognizer) {
-        if gesture.state == .began {
-            PopUpViewBtn_decline.setImage(UIImage(named: "decline_on"), for: .normal)
-        } else if gesture.state == .ended {
+        if gesture.state == .ended {
             print("Decline memory updating!!")
             restoreMemory(array: restoreArray)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
@@ -756,10 +723,10 @@ class TrainningViewController: UIViewController {
         Check.isHidden = true
         next_round_btn.isHidden = false
         
-        self.PopUpView.removeFromSuperview()
-        self.PopUpViewLabel.removeFromSuperview()
-        self.PopUpViewBtn_confirm.removeFromSuperview()
-        self.PopUpViewBtn_decline.removeFromSuperview()
+        PopUpView.alpha = 0.0
+        PopUpViewLabel.alpha = 0.0
+        PopUpViewBtn_confirm.alpha = 0.0
+        PopUpViewBtn_decline.alpha = 0.0
     }
     
     @IBAction func check_mode(_ sender: UIButton) {
