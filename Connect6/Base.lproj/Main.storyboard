@@ -2625,6 +2625,7 @@
         <image name="win_0" width="318" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="CvF-OC-EOA"/>
         <segue reference="upB-du-BFb"/>
         <segue reference="aLU-6o-jzh"/>
         <segue reference="9uY-Pc-eP2"/>
