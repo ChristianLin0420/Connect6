@@ -28,6 +28,7 @@ Using my own ML technique to play connect 6, and users can train their own playe
   2. If current checking pattern exists, then we plus the score and refresh the database, otherwise, we append this pattern into the database and initial the score as 1.
   3. Since the user may change the chess' position if he or she doesn't think beginning position is not great enough, therefore, the program will temporarily memorize the position which the trainner doen't satisfy.
   4. If (3) exists, then we also break down the pattern square into lines and then check the database whether these patterns exists or not, if the result is yes, then the program will update score, however, this time the score will be reduced 1. On the other hand, the program does nothing.
+  5. After single round of the game finished, the application will ask the user whether saves the trainning record in CoreData.
   
 ### Why is this a ML algorithm?
 [![image](https://github.com/ChristianLin0420/Connect6/blob/master/ScoreUpdate.jpg)](https://i.imgur.com/lMP8OZq.mp4)
