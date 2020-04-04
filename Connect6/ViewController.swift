@@ -56,6 +56,7 @@ class ViewController: UIViewController {
                                  ["ST8_cortex_array_all", "ST8_cortex_array_one", "ST8_cortex_array_two", "ST8_cortex_array_three", "ST8_cortex_array_four"] ]
     private let EntityCollection = ["Master", "Student_1", "Student_2", "Student_3", "Student_4", "Student_5", "Student_6", "Student_7", "Student_8"]
     private let cortex_amountCollection = ["cortex_amount", "ST1cortex_amount", "ST2cortex_amount", "ST3cortex_amount", "ST4cortex_amount", "ST5cortex_amount", "ST6cortex_amount", "ST7cortex_amount", "ST8cortex_amount"]
+    private let PlayerAbilityUD = ["Player1_Ability", "Player2_Ability", "Player3_Ability", "Player4_Ability", "Player5_Abiliyt", "Player6_Ability", "Player7_Ability", "Player8_Ability"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -291,6 +292,14 @@ class ViewController: UIViewController {
             
             print("EntityCollection: \(EntityCollection[index]))")
             print(patternArrayCollection[index].count)
+            
+            if index == 0 {
+                CortexUD.set(patternArrayCollection[index].count, forKey: "Master_Ability")
+                CortexUD.synchronize()
+            } else {
+                CortexUD.set(patternArrayCollection[index].count, forKey: PlayerAbilityUD[index - 1])
+                CortexUD.synchronize()
+            }
             
             if patternArrayCollection[index].count != 0 {
                 for index in 0...patternArrayCollection[index].count - 1 {

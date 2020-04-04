@@ -594,26 +594,6 @@ class TrainningViewController: UIViewController {
     }
     
     func restoreMemory(array: [restoreElement]) {
-//        let group = DispatchGroup()
-//        group.enter()
-//
-//        print("restoreArray = \(array)")
-//
-//        DispatchQueue.main.sync {
-//            if array.count != 0 {
-//                for element in array {
-//                    self.CortexProcess.saveValidPattern(valid_array: element.array, score_operation: element.score_operation, person: element.person)
-//                }
-//            }
-//            group.leave()
-//        }
-//
-//        group.notify(queue: .main) {
-//            print("Finished!!!!")
-//            self.restoreArray.removeAll()
-//            print("restoreArray = \(self.restoreArray)")
-//        }
-        
         for element in array {
             CortexProcess.saveValidPattern(valid_array: element.array, score_operation: element.score_operation, person: element.person)
         }
@@ -639,8 +619,11 @@ class TrainningViewController: UIViewController {
     }
     
     @objc func confirm_memory(gesture: UITapGestureRecognizer) {
-        if gesture.state == .ended {
+        if gesture.state == .began {
+            PopUpViewBtn_confirm.isSelected = true
+        } else if gesture.state == .ended {
             print("Confirm memory updating!!")
+            PopUpViewBtn_confirm.isSelected = false
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                 self.resetAll()
             })
@@ -648,12 +631,24 @@ class TrainningViewController: UIViewController {
     }
     
     @objc func decline_memory(gesture: UITapGestureRecognizer) {
-        if gesture.state == .ended {
+        if gesture.state == .began {
+            PopUpViewBtn_decline.isSelected = true
+        } else if gesture.state == .ended {
             print("Decline memory updating!!")
+            PopUpViewBtn_decline.isSelected = false
             restoreMemory(array: restoreArray)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            
+            let group = DispatchGroup()
+            group.enter()
+            
+            DispatchQueue.global().sync {
+                self.restoreMemory(array: self.restoreArray)
+                group.leave()
+            }
+            
+            group.notify(queue: .main) {
                 self.resetAll()
-            })
+            }
         }
     }
     
@@ -665,21 +660,6 @@ class TrainningViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                 self.showRestoreMemoryView()
             })
-            
-//            let group = DispatchGroup()
-//            group.enter()
-
-            
-//            DispatchQueue.main.sync {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-////                    print("restore array before execution = \(self.restoreArray)")
-////                    self.restoreMemory(array: self.restoreArray)
-//                }
-//            }
-//
-//            group.notify(queue: .main) {
-//                self.resetAll()
-//            }
         } else if winner == -1 {
             continue_playing = false
             for coordination in winning_pattern { checkToPlay(column: coordination[1], row: coordination[0], kind: 5) }
@@ -687,20 +667,6 @@ class TrainningViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                 self.showRestoreMemoryView()
             })
-            
-//            let group = DispatchGroup()
-//            group.enter()
-//
-//            DispatchQueue.main.sync {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-//                    print("restore array before execution = \(self.restoreArray)")
-//                    self.restoreMemory(array: self.restoreArray)
-//                }
-//            }
-//
-//            group.notify(queue: .main) {
-//                self.resetAll()
-//            }
         } else {
             continue_playing = true
         }

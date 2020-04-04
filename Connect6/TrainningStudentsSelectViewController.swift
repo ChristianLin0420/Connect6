@@ -12,13 +12,9 @@ class TrainningStudentsSelectViewController: UIViewController {
 
     let studentsInfoVC = StudentsInformationViewController()
     
-    @IBOutlet weak var P1_full_ability: UIView!
-    @IBOutlet weak var P1_current_ability: UILabel!
     @IBOutlet weak var P1_icon: UIImageView!
     @IBOutlet weak var P1_name: UILabel!
     
-    @IBOutlet weak var P2_full_ability: UIView!
-    @IBOutlet weak var P2_current_ability: UILabel!
     @IBOutlet weak var P2_icon: UIImageView!
     @IBOutlet weak var P2_name: UILabel!
     
@@ -80,21 +76,6 @@ class TrainningStudentsSelectViewController: UIViewController {
         start_tap.minimumPressDuration = 0
         Start_btn.addGestureRecognizer(start_tap)
         Start_btn.isUserInteractionEnabled = true
-        
-        P1_current_ability.frame = CGRect(
-            x: self.P1_full_ability.frame.minX,
-            y: self.P1_full_ability.frame.minY,
-            width: self.P1_full_ability.frame.width * 0.25,
-            height: self.P1_full_ability.frame.height)
-        
-        P2_current_ability.frame = CGRect(
-            x: self.P2_full_ability.frame.minX,
-            y: self.P2_full_ability.frame.minY,
-            width: self.P2_full_ability.frame.width * 0.36,
-            height: self.P2_full_ability.frame.height)
-        
-        self.view.addSubview(P1_current_ability)
-        self.view.addSubview(P2_current_ability)
     }
     
     func showStudent(numb: Int) {

@@ -14,13 +14,16 @@ class StudentsInformationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var Info_icon: UIImageView!
     @IBOutlet weak var Info_name: UITextField!
     @IBOutlet weak var Info_createDate: UILabel!
-    @IBOutlet weak var Info_full_ability: UIView!
-    @IBOutlet weak var Info_current_ability: UILabel!
+    @IBOutlet weak var Info_learnPatternCount: UILabel!
     
     @IBOutlet weak var User_icon: UIImageView!
     @IBOutlet weak var User_name: UILabel!
     @IBOutlet var Students: [UIImageView]!
     @IBOutlet var Students_name: [UILabel]!
+    
+    @IBOutlet weak var PopUpView: UIView!
+    @IBOutlet weak var ConfirmBtn: UIButton!
+    @IBOutlet weak var CancelBtn: UIButton!
     
     // UserDefaults
     let CortexUD = UserDefaults.standard
@@ -71,7 +74,8 @@ class StudentsInformationViewController: UIViewController, UITextFieldDelegate {
             Students[i].addGestureRecognizer(opponent_tap_collection[i])
             Students[i].isUserInteractionEnabled = true
         }
-
+        
+        PopUpView.layer.cornerRadius = 15
     }
     
     func reloadAllUDInfo() {
@@ -185,7 +189,26 @@ class StudentsInformationViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func DeleteMemory(_ sender: UIButton) {
+        PopUpView.isHidden = false
+        UIViewPropertyAnimator.runningPropertyAnimator(
+            withDuration: 0.5,
+            delay: 0.0,
+            options: [],
+            animations: {
+                self.PopUpView.alpha = 1.0
+            },
+            completion: nil)
+    }
+    
+    @IBAction func ConfirmCleanRecord(_ sender: UIButton) {
         print("delete \(currentEditPlayer + 1)")
         CortexProcess.CleanCoreData(index: currentEditPlayer + 1)
+        PopUpView.alpha = 0.0
+        PopUpView.isHidden = true
+    }
+    
+    @IBAction func CancelCleanReocrd(_ sender: UIButton) {
+        PopUpView.alpha = 0.0
+        PopUpView.isHidden = true
     }
 }
